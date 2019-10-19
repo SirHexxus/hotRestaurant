@@ -11,7 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/SirHexxus/hotRestaurant.git"
   },
-  "author": "",
+
+  "author": "James Stacy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SirHexxus/hotRestaurant/issues"
@@ -20,5 +21,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "path": "^0.12.7"
+
   }
 }
