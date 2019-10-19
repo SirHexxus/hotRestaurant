@@ -25,10 +25,11 @@ function Reservation(name, phoneNumber, email, id) {
 
 // Starts the server to begin listening
 // =============================================================
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+// app.listen(PORT, function() {
+//     console.log("App listening on PORT " + PORT);
+//   });
 
+//   Routes
 app.get("/", function(req, res) {
 res.send("Welcome! Make a new reservation.");
 });
@@ -41,4 +42,17 @@ app.get("/reserve", function(req, res) {
 res.sendFile(path.join(__dirname, ""));
 });
   
-  
+  // Create New Characters - takes in JSON input
+app.post("/api/tables", function(req, res) {
+   var newTable = req.body;
+ 
+   console.log(newTable);
+ 
+   reservations.push(newTable);
+ 
+   res.json(newTable);
+ });
+ 
+ app.listen(PORT, function() {
+   console.log("App listening on PORT " + PORT);
+ });
