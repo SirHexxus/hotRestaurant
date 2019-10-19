@@ -34,25 +34,26 @@ reservations = [
   id: "u wot m8"
 },
 {
-  routeName: "yoda",
-  name: "Yoda",
-  role: "Jedi Master",
-  age: 900,
-  forcePoints: 2000
+  name: "yoda",
+  phoneNumber: "Yoda",
+  email: "Jedi Master",
+  id: 900
 }
 ];
 
 
 app.get("/", function(req, res) {
-res.send("Welcome! Make a new reservation.");
+res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.get("/api/tables", function(req, res) {
-  return res.json(reservations);
+
+  console.log(res.json(reservations));
+  res.sendFile(path.join(__dirname, '/tables.html'));
 });
 
 app.get("/api/reserve", function(req, res) {
-res.sendFile(path.join(__dirname, ""));
+res.sendFile(path.join(__dirname, '/reservation.html'));
 });
   
   // Create New tables - takes in JSON input
