@@ -10,7 +10,15 @@ $('.submit').on('click', function(event) {
   };
   console.log(res);
 
-  // $.post()
+  $.post('api/tables', res, (data) => {
+
+    if (data) {
+      alert('Congratulations, we found you a table!');
+    }
+     else {
+       alert('We apologize, we have put you on the wait list');
+     }
+  });
 
 
   $('#name').val('');
