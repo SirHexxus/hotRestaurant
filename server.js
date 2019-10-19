@@ -14,15 +14,9 @@ app.use(express.json());
 
 // Creating a reservations constructor (DATA)
 
-// built-in dummy reservation for testing purposes
-let reservations = {
-  name: "bob",
-  phoneNumber: "8675309",
-  email: "fakeemail@fakenews.com",
-  id: "u wot m8"
-}
 
-;
+
+let reservations = [];
 let waitingList =[];
 function Reservation(name, phoneNumber, email, id) {
    this.name = name;
@@ -30,6 +24,14 @@ function Reservation(name, phoneNumber, email, id) {
    this.email = email;
    this.id = id;
 }
+
+// built-in dummy reservation for testing purposes
+reservations = {
+  name: "bob",
+  phoneNumber: "8675309",
+  email: "fakeemail@fakenews.com",
+  id: "u wot m8"
+};
 
 
 
@@ -44,11 +46,11 @@ app.get("/", function(req, res) {
 res.send("Welcome! Make a new reservation.");
 });
 
-app.get("/tables", function(req, res) {
+app.get("/api/tables", function(req, res) {
   return res.json(reservations);
 });
 
-app.get("/reserve", function(req, res) {
+app.get("/api/reserve", function(req, res) {
 res.sendFile(path.join(__dirname, ""));
 });
   
