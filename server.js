@@ -31,15 +31,15 @@ function Reservation(name, phoneNumber, email, id) {
 
 //   Routes
 app.get("/", function(req, res) {
-res.send("Welcome! Make a new reservation.");
+res.sendFile(path.join(__dirname, '/index.html'));
 });
 
-app.get("/tables", function(req, res) {
-res.sendFile(path.join(__dirname, ""));
+app.get("/api/tables", function(req, res) {
+res.sendFile(path.join(__dirname, '/tables.html'));
 });
 
-app.get("/reserve", function(req, res) {
-res.sendFile(path.join(__dirname, ""));
+app.get("/api/reserve", function(req, res) {
+res.sendFile(path.join(__dirname, '/reservation.html'));
 });
   
   // Create New Characters - takes in JSON input
