@@ -22,3 +22,10 @@ function Reservation(name, phoneNumber, email, id) {
    this.email = email;
    this.id = id;
 }
+
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+  
