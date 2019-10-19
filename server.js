@@ -26,22 +26,23 @@ function Reservation(name, phoneNumber, email, id) {
 }
 
 // built-in dummy reservation for testing purposes
-reservations = {
+reservations = [
+  {
   name: "bob",
   phoneNumber: "8675309",
   email: "fakeemail@fakenews.com",
   id: "u wot m8"
-};
+},
+{
+  routeName: "yoda",
+  name: "Yoda",
+  role: "Jedi Master",
+  age: 900,
+  forcePoints: 2000
+}
+];
 
 
-
-// Starts the server to begin listening
-// =============================================================
-// app.listen(PORT, function() {
-//     console.log("App listening on PORT " + PORT);
-//   });
-
-//   Routes
 app.get("/", function(req, res) {
 res.send("Welcome! Make a new reservation.");
 });
